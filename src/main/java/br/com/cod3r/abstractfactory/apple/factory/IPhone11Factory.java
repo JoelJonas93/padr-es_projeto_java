@@ -14,7 +14,7 @@ public class IPhone11Factory extends IPhoneFactory {
 	public IPhone createIPhone(String level) {
 		if(level.equals("standard")) {
 			return new IPhone11(rules);
-		} else if(level.equals("highEnd")) {
+		} else if(level.equals("pro")) {
 			return new IPhone11Pro(rules);
 		} else return null;
 	}
