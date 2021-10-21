@@ -9,10 +9,12 @@ public abstract class IPhoneHSimpleFactory {
 
         device = createIPhone(model);
 
-        device.assemble();
-        device.certificates();
-        device.getHardware();
-        device.pack();
+        if(device != null){
+            device.assemble();
+            device.certificates();
+            device.getHardware();
+            device.pack();
+        }
 
         return device;
     }

@@ -1,36 +1,31 @@
 package br.com.cod3r.factory.apple._simpleFactory;
 
-import br.com.cod3r.factory.apple._factory.factory.IPhoneFactory;
-import br.com.cod3r.factory.apple._factory.factory.Iphone11Factory;
-import br.com.cod3r.factory.apple._factory.factory.Iphone11ProFactory;
-import br.com.cod3r.factory.apple._factory.factory.IphoneXFactory;
-import br.com.cod3r.factory.apple._factory.factory.IphoneXSMaxFactory;
-import br.com.cod3r.factory.apple._factory.model.IPhone;
+import br.com.cod3r.factory.apple._simpleFactory.model.IPhone;
+import br.com.cod3r.factory.apple._simpleFactory.simpleFactory.IPhoneSimpleFactory;
 
 public class Client {
 	
 	public static void main(String[] args) {
 
+		System.out.println("### Using SimpleFactory");
+
 		// Criação de cada factory dos iphone
-		IPhoneFactory factoryIphone11 = new Iphone11Factory();
-		IPhoneFactory factoryIphone11Pro = new Iphone11ProFactory();
-		IPhoneFactory factoryIphoneX = new IphoneXFactory();
-		IPhoneFactory factoryIphoneXSMax = new IphoneXSMaxFactory();
+		IPhoneSimpleFactory factoryIphone = new IPhoneSimpleFactory();
 		
 		System.out.println("### Ordering an iPhone 11");
-		IPhone iphone11 = factoryIphone11.orderIPhone();
+		IPhone iphone11 = factoryIphone.orderIPhone("11","standard");
 		System.out.println(iphone11);
 
 		System.out.println("### Ordering an iPhone 11 Pro");
-		IPhone iphone11Pro = factoryIphone11Pro.orderIPhone();
+		IPhone iphone11Pro = factoryIphone.orderIPhone("11","pro");
 		System.out.println(iphone11Pro);
 
 		System.out.println("### Ordering an iPhone X");
-		IPhone iphoneX = factoryIphoneX.orderIPhone();
+		IPhone iphoneX = factoryIphone.orderIPhone("X","standard");
 		System.out.println(iphoneX);
 
 		System.out.println("### Ordering an iPhone XS Max");
-		IPhone iphoneXSMax = factoryIphoneXSMax.orderIPhone();
+		IPhone iphoneXSMax = factoryIphone.orderIPhone("X","SMAX");
 		System.out.println(iphoneXSMax);
 	}
 }
